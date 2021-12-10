@@ -1,7 +1,9 @@
 ﻿// with expression
 
 var r1 = new Rect(100, 100);
-var r2 = r1 with { X = 9, Y = 9 };
+var r2 = r1 with { Y = 9 };
+
+System.Console.WriteLine(r2.X);
 
 
 public struct Rect

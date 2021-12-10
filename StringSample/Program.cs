@@ -3,17 +3,30 @@ using System.Text;
 
 class Program
 {
+    const string Score = "99";
     const string Name = "Bill";
-    const string Description = $"{Name}'s Description"; 
+    const string Description = $"{Name}'s Score is {Score}";
+
+
     static void Main(string[] args)
     {
         PrintText("全字串列印");
+
         PrintText($"字串插值列印, 時間 {DateTime.Now}, 這是結尾");
+        PrintText($"沒有格式的字串");
+        PrintText($"today is {DateTime.Now}");
+
+        //CustomStringHandler handler = new CustomStringHandler(17, 1);
+        //handler.AppendLiteral("字串插值列印, 時間 ");
+        //handler.AppendFormatted(DateTime.Now);
+        //handler.AppendLiteral(", 這是結尾");
+        //PrintText(handler.ToString());
+
     }
 
     static void PrintText(string text)
     {
-        Console.WriteLine (text);   
+        Console.WriteLine(text);
     }
 
     static void PrintText(CustomStringHandler handler)
@@ -26,7 +39,7 @@ class Program
 struct CustomStringHandler
 {
     StringBuilder builder;
-    public CustomStringHandler (int literalLength, int formatCount)
+    public CustomStringHandler(int literalLength, int formatCount)
     {
         Console.WriteLine("\t進入建構式");
         builder = new StringBuilder(literalLength);
@@ -49,6 +62,6 @@ struct CustomStringHandler
 
     public override string ToString()
     {
-        return builder.ToString(); 
+        return builder.ToString();
     }
 }

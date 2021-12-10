@@ -7,9 +7,10 @@ object parse2 = (string s) => int.Parse(s);
 Delegate parse3 = (string s) => int.Parse(s);
 
 // infer delegate type for method group
-var read = Console.Read();
+var read = Console.Read;
 
 // lambda expression
+// LambdaExpression<Func<string,int>>
 LambdaExpression expression1 = (string s) => int.Parse(s);
 Expression expression2 = (string s) => int.Parse(s);
 
